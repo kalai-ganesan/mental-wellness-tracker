@@ -1,0 +1,323 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+body {
+  background: linear-gradient(to right, #f0f4f8, #dbeafe);
+  color: #333;
+  line-height: 1.6;
+  min-height: 100vh;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+h1, h2, h3 {
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.subtitle {
+  text-align: center;
+  font-size: 1.1rem;
+  margin-bottom: 25px;
+  color: #555;
+}
+
+/* Greeting Section */
+.greeting {
+  animation: fadeIn 1.5s ease-in;
+  margin-bottom: 30px;
+}
+
+/* Containers */
+.container {
+  width: 100%;
+  max-width: 800px;
+  background: #fff;
+  border-radius: 20px;
+  padding: 25px;
+  margin: 20px auto;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  transition: all 0.3s ease-in-out;
+}
+
+/* Mood Buttons */
+.mood-buttons {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.mood-buttons button {
+  padding: 12px 24px;
+  border: none;
+  border-radius: 30px;
+  background: #3b82f6;
+  color: white;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: transform 0.3s, background 0.3s;
+}
+
+.mood-buttons button:hover {
+  background: #2563eb;
+  transform: scale(1.05);
+}
+
+/* Hidden by default */
+.hidden {
+  display: none;
+}
+
+/* Quote / Tips / Video */
+.quote-box {
+  font-size: 1.3rem;
+  background-color: #fef9c3;
+  padding: 20px;
+  border-radius: 15px;
+  text-align: center;
+  animation: slideUp 1s ease-in-out;
+  margin-bottom: 20px;
+}
+
+#next-button {
+  display: inline-block;
+  margin: 15px auto 0;
+  padding: 10px 20px;
+  background: #10b981;
+  color: white;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+#next-button:hover {
+  background: #059669;
+}
+
+/* Timer */
+#timer {
+  font-size: 3rem;
+  color: #ef4444;
+  text-align: center;
+  animation: fadeIn 1s;
+}
+
+/* Tips List */
+#tips-list {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 15px;
+  animation: fadeIn 1s ease-in;
+}
+
+#tips-list div {
+  background: #e0f2fe;
+  padding: 12px;
+  border-radius: 10px;
+  transform: scale(0.9);
+  animation: growFade 0.6s ease-in-out forwards;
+}
+
+/* Video Frame */
+iframe {
+  width: 100%;
+  height: 300px;
+  border: none;
+  border-radius: 15px;
+  margin-top: 20px;
+}
+
+/* Footer */
+footer {
+  margin-top: 40px;
+  text-align: center;
+  font-size: 0.9rem;
+  color: #888;
+}
+
+
+#feedback-section {
+  max-width: 600px;
+  margin: 50px auto;
+  padding: 20px;
+  background: #fefefe;
+  border-radius: 20px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+  animation: fadeInUp 1s ease;
+}
+
+#feedback-section h2 {
+  text-align: center;
+  font-size: 1.8rem;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.feedback-form label {
+  display: block;
+  margin: 10px 0 5px;
+  font-weight: 600;
+}
+
+.feedback-form input,
+.feedback-form select,
+.feedback-form button {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border-radius: 12px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+  transition: 0.3s ease;
+}
+
+.feedback-form input:focus,
+.feedback-form select:focus {
+  outline: none;
+  border-color: #6e9ac3;
+  box-shadow: 0 0 8px rgba(110, 154, 195, 0.4);
+}
+
+.feedback-form button {
+  background-color: #6e9ac3;
+  color: #fff;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.feedback-form button:hover {
+  background-color: #507aa1;
+}
+
+/* 🌟 Rating Slider */
+#ratingValue {
+  font-weight: bold;
+  color: #6e9ac3;
+  margin-top: -10px;
+  text-align: right;
+  font-size: 1.2rem;
+}
+
+/* 🔐 Admin Panel */
+#admin-section {
+  margin: 50px auto;
+  max-width: 600px;
+  padding: 20px;
+  background: #f9f9f9;
+  border-radius: 20px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  animation: fadeIn 1.2s ease;
+}
+
+#admin-section input[type="password"] {
+  padding: 10px;
+  width: 70%;
+  margin-right: 10px;
+  border-radius: 10px;
+  border: 1px solid #bbb;
+}
+
+#admin-section button {
+  background-color: #88bb7d;
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+#admin-section button:hover {
+  background-color: #6fa965;
+}
+
+/* 🌟 Feedback History Cards */
+#feedback-history {
+  margin-top: 30px;
+  overflow-x: auto;
+  display: flex;
+  gap: 15px;
+  padding: 10px;
+}
+
+.feedback-card {
+  min-width: 200px;
+  background: #eaf3fb;
+  border: 1px solid #cde0f2;
+  border-radius: 16px;
+  padding: 15px;
+  box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.05);
+  animation: slideIn 0.8s ease;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 600px) {
+  #feedback-section, #admin-section {
+    padding: 15px;
+  }
+
+  .feedback-card {
+    min-width: 160px;
+  }
+}
+/* Animations */
+@keyframes fadeIn {
+  from {opacity: 0;}
+  to {opacity: 1;}
+}
+
+@keyframes slideUp {
+  from {transform: translateY(30px); opacity: 0;}
+  to {transform: translateY(0); opacity: 1;}
+}
+
+@keyframes growFade {
+  0% {transform: scale(0.8); opacity: 0;}
+  100% {transform: scale(1); opacity: 1;}
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+  .mood-buttons {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  #timer {
+    font-size: 2.2rem;
+  }
+
+  iframe {
+    height: 220px;
+  }
+}
+
+/* 🔥 Animations */
+@keyframes fadeInUp {
+  from {
+    transform: translateY(30px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateX(-50px);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
