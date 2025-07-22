@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mental Wellness Tracker</title>
+    <link rel="stylesheet" href="./model2.css" />
+</head>
+
+<body>
+
+    <!-- Greeting Section -->
+    <header class="greeting">
+        <h1>Welcome to Your Mental Wellness Space 🌿</h1>
+        <p class="subtitle">Hello! How are you feeling today? Let’s take a small step toward feeling better.</p>
+    </header>
+
+    <!-- Mood Selection -->
+    <section id="mood-section" class="container">
+        <h2>Select Your Mood</h2>
+        <div class="mood-buttons">
+            <button onclick="selectMood('happy')">😊 I'm Happy</button>
+            <button onclick="selectMood('sad')">😔 I'm Feeling Sad</button>
+            <button onclick="selectMood('stressed')">😣 I'm Feeling Stressed</button>
+           
+    </section>
+
+    <!-- Quote / Emotional Response -->
+    <section id="quote-section" class="container hidden">
+        <article id="quote-box" class="quote-box"></article>
+        <button id="next-button" class="next-btn hidden" onclick="startBreathing()">Start Breathing Timer</button>
+    </section>
+
+    <!-- Breathing Timer -->
+    <section id="timer-section" class="container hidden">
+        <h3>Breathe in... Breathe out 🧘</h3>
+        <div id="timer">20</div>
+    </section>
+
+    <!-- Tips Section (for Happy & Stressed) -->
+    <section id="tips-section" class="container hidden">
+        <h3>Here are some helpful tips 💡</h3>
+        <div id="tips-list"></div>
+    </section>
+
+    <!-- Video Suggestion (optional) -->
+    <section id="video-section" class="container hidden">
+        <h3>Would you like to watch this relaxing video?</h3>
+        <iframe id="videoFrame" src="" allowfullscreen></iframe>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+         <!-- 🌟 Feedback Section -->
+            <div class="container" id="feedback-section">
+                <h2>🌟 Share Your Feedback</h2>
+                <input type="text" id="userName" placeholder="Enter your name" required>
+                <select id="userMood">
+                    <option value="">Select your mood</option>
+                    <option value="Good">Good</option>
+                    <option value="Bad">Bad</option>
+                </select>
+                <label for="rating">Rate your experience (1 to 5):</label>
+                <input type="range" id="rating" min="1" max="5" step="1">
+                <span id="ratingValue">3</span> ⭐
+                <button onclick="submitFeedback()">Submit Feedback</button>
+            </div>
+
+            <!-- 🔐 Admin Unlock Section -->
+            <div class="container" id="admin-unlock-section">
+                <h3>👁️ View Feedback (Creator Only)</h3>
+                <input type="password" id="adminPassword" placeholder="Enter Admin Password">
+                <button onclick="unlockAdmin()">Unlock</button>
+            </div>
+
+            <!-- 📜 Feedback History (Hidden at first) -->
+            <div class="container hidden" id="feedback-history">
+                <h2>📝 User Feedback History</h2>
+                <div id="feedback-carousel" class="carousel"></div>
+            </div>
+        </div>
+        <p>&copy; 2025 Mental Wellness by Kalai. Built with 💖 for your peace of mind.</p>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="./model2.js"></script>
+</body>
+
+</html>
